@@ -30,9 +30,14 @@
     </p>
 
     <p>Варианты ответов:</p>
+    <#if (question.rightAnswersCount() > 1)>
+        <#assign input_type = "checkbox">
+    <#else>
+        <#assign input_type = "radio">
+    </#if>
     <#list question.answers as answer>
         <label>
-            <input type="radio" name="${index}" value="${answer_index + 1}">${answer.text}<br/>
+            <input type="${input_type}" name="${path}:${index}" value="${answer_index + 1}">${answer.text}<br/>
         </label>
     </#list>
 

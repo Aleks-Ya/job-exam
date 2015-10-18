@@ -25,6 +25,11 @@ public class QuestionImpl implements Question {
     }
 
     @Override
+    public int rightAnswersCount() {
+        return (int) answers.stream().filter(Answer::isRight).count();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

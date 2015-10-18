@@ -8,4 +8,5 @@ import java.util.List;
 public interface Question {
     String getText();
     List<? extends Answer> getAnswers();
+    int rightAnswersCount();
 }

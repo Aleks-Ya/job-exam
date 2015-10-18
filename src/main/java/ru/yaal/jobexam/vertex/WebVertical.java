@@ -55,7 +55,7 @@ public class WebVertical extends AbstractVerticle {
         @Override
         public void handle(HttpServerRequest request) {
             try {
-                String path = request.params().get("path");
+                String path = request.path().replaceFirst("/$", "") + ".html";
                 Subject subject = subjectsDateSource.takeSubjectByPath(path);
                 String html = freemarkerProcessor.process(subject);
                 HttpServerResponse response = request.response();

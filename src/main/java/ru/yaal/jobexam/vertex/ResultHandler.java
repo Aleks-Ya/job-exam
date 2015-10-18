@@ -9,8 +9,8 @@ import io.vertx.ext.web.RoutingContext;
 class ResultHandler implements Handler<RoutingContext> {
 
     @Override
-    public void handle(RoutingContext event) {
-        System.out.println("RESULT!!!!!!!!!!!!!!!!!!!!!!!!!");
-        event.response().end("Your result saved");
+    public void handle(RoutingContext context) {
+        System.out.println("result: " + context.request().formAttributes().toString());
+        context.response().end("Your result saved \n" + context.request().formAttributes().toString());
     }
 }

@@ -2,7 +2,6 @@ package ru.yaal.jobexam.vertex;
 
 import freemarker.template.TemplateException;
 import io.vertx.core.Handler;
-import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.ext.web.RoutingContext;
 import ru.yaal.jobexam.FreemarkerProcessor;
@@ -24,12 +23,12 @@ class QuestionHandler implements Handler<RoutingContext> {
     }
 
     @Override
-    public void handle(RoutingContext event) {
+    public void handle(RoutingContext context) {
         try {
-            String path = event.request().path().replaceFirst("/$", "") + ".html";
+            String path = context.request().path().replaceFirst("/$", "") + ".html";
             Subject subject = subjectsDateSource.takeSubjectByPath(path);
             String html = freemarkerProcessor.process(subject);
-            HttpServerResponse response = event.request().response();
+            HttpServerResponse response = context.request().response();
             response.putHeader("content-type", "text/html");
             response.end(html);
         } catch (IOException | TemplateException e) {

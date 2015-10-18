@@ -4,6 +4,7 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.impl.BodyHandlerImpl;
 import ru.yaal.jobexam.FreemarkerProcessor;
 import ru.yaal.jobexam.FreemarkerProcessorImpl;
 import ru.yaal.jobexam.HtmlSubjectDataSource;
@@ -34,6 +35,7 @@ public class WebVertical extends AbstractVerticle {
         FreemarkerProcessor processor = new FreemarkerProcessorImpl();
 
         Router router = Router.router(vertx);
+        router.route("/result").handler(new BodyHandlerImpl());
         router.route("/result").handler(new ResultHandler());
         router.routeWithRegex("^((?!/result).)*$").handler(new QuestionHandler(subjects, processor));
 

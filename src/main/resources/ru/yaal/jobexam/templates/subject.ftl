@@ -1,3 +1,4 @@
+<#-- @ftlvariable name="path" type="java.lang.String" -->
 <#-- @ftlvariable name="questions" type="java.util.List<ru.yaal.jobexam.Question>" -->
 <#-- @ftlvariable name="name" type="java.lang.String" -->
 <!DOCTYPE html>
@@ -17,22 +18,26 @@
     Всего вопросов: ${questions?size}
 </p>
 
-<form>
+<#--noinspection HtmlUnknownTarget-->
+<form id="result" method="post" action="/result">
 
 <#list questions as question>
-    <h2>Вопрос ${question_index + 1}: </h2>
+    <#assign index = question_index + 1>
+    <h2>Вопрос ${index}: </h2>
 
     <p>
     ${question.text}
     </p>
-    <label>Варианты ответов:<br/>
-        <#list question.answers as answer>
-            <input type="radio" name="spring-1" value="1">${answer.text}<br/>
-        </#list>
-    </label>
 
-    <p><input type="submit" value="Отправить"/></p>
+    <p>Варианты ответов:</p>
+    <#list question.answers as answer>
+        <label>
+            <input type="radio" name="${index}" value="${answer_index + 1}">${answer.text}<br/>
+        </label>
+    </#list>
+
 </#list>
+    <p><input type="submit" value="Отправить"/></p>
 
 </form>
 

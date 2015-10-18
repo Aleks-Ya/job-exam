@@ -7,9 +7,9 @@ import java.util.List;
  */
 public class QuestionImpl implements Question {
     private String text;
-    private List<Answer> answers;
+    private List<? extends Answer> answers;
 
-    public QuestionImpl(String text, List<Answer> answers) {
+    public QuestionImpl(String text, List<? extends Answer> answers) {
         assert text != null && !text.isEmpty();
         assert answers != null && !answers.isEmpty();
         this.text = text;
@@ -20,7 +20,7 @@ public class QuestionImpl implements Question {
         return text;
     }
 
-    public List<Answer> getAnswers() {
+    public List<? extends Answer> getAnswers() {
         return answers;
     }
 

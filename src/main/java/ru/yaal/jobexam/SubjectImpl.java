@@ -6,17 +6,17 @@ import java.util.List;
  * @author Aleksey Yablokov
  */
 public class SubjectImpl implements Subject {
-    private List<Question> questions;
+    private List<? extends Question> questions;
     private String name;
     private String path;
 
-    public SubjectImpl(List<Question> questions, String name, String path) {
+    public SubjectImpl(List<? extends Question> questions, String name, String path) {
         this.questions = questions;
         this.name = name;
         this.path = path;
     }
 
-    public List<Question> getQuestions() {
+    public List<? extends Question> getQuestions() {
         return questions;
     }
 

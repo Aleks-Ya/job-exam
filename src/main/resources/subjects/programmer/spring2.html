@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Опрос по Spring</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<form>
+    <h1>Тест по Spring</h1>
+
+    <h2>Вопрос 1: Какой аннотации не хватает на классе?</h2>
+    <pre><code>
+        public class ServerSettings {
+        @Bean
+        public int port() {
+        return 8080;
+        }
+        }
+    </code></pre>
+    <p></p>
+    <label>Варианты ответов:<br/>
+        <input type="radio" name="spring-1" value="1"><code>@Settings</code><br/>
+        <input type="radio" name="spring-1" value="2"/><code>@Configuration</code><br/>
+        <input type="radio" name="spring-1" value="3"/><code>@Component</code><br/>
+        <input type="radio" name="spring-1" value="4"/><code>@Beans</code><br/>
+        <input type="radio" name="spring-1" value="5"/><code>@ServerBean</code><br/>
+        <input type="radio" name="spring-1" value="5"/>Нет правильного ответа<br/>
+    </label>
+
+    <p><input type="submit" value="Отправить"/></p>
+</form>
+
+<div id="1">
+    <div>
+        <br/>
+
+    </div>
+    <div>
+        <pre><code>@Settings</code></pre>
+    </div>
+    <div><code>@Component</code></div>
+    <div data-right-answer><code>@Configuration</code></div>
+    <div><code>@Beans</code></div>
+    <div><code>@Server</code></div>
+    <div><code>@ServerBean</code></div>
+    <div>Нет правильного ответа</div>
+</div>
+
+<div id="2">
+    <div>
+        Какое имя получит бин?<br/>
+        <pre><code>
+            @Bean
+            public int getPort() {
+            return 8080;
+            }
+        </code></pre>
+    </div>
+    <div data-right-answer>
+        <pre><code>getPort</code></pre>
+    </div>
+    <div><code>port</code></div>
+    <div><code>getPort$1 (вместо 1 может быть произвольное число)</code></div>
+    <div><code>Нет правильного ответа</code></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Опрос по Spring</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<h1>Зоология</h1>
+
+<p>
+    Всего вопросов: 1
+</p>
+
+<form>
+
+    <h2>Вопрос 1: </h2>
+
+    <p>
+    Сколько ног у сороконожки?
+    </p>
+    <label>Варианты ответов:<br/>
+            <input type="radio" name="spring-1" value="1">ru.yaal.jobexam.AnswerImpl@3c2d329f<br/>
+            <input type="radio" name="spring-1" value="1">ru.yaal.jobexam.AnswerImpl@e4616648<br/>
+    </label>
+
+    <p><input type="submit" value="Отправить"/></p>
+
+</form>
+
+</body>
+</html>

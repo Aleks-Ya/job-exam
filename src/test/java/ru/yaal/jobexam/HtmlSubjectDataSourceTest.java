@@ -26,12 +26,12 @@ public class HtmlSubjectDataSourceTest {
         assertThat(subject.getName(), equalTo("Опрос по Spring"));
         assertThat(subject.getPath(), equalTo(path));
 
-        List<Question> questions = subject.getQuestions();
+        List<? extends Question> questions = subject.getQuestions();
         assertThat(questions, hasSize(2));
 
         Question q1 = questions.get(0);
         assertThat(q1.getText(), containsString("Какой аннотации не хватает на классе?\n<br>"));
-        assertThat(q1.getAnswers(), contains(new Answer[]{
+        assertThat(q1.getAnswers(), contains(new Answer[] {
                 new AnswerImpl("<pre><code>@Settings</code></pre>", false),
                 new AnswerImpl("<code>@Component</code>", false),
                 new AnswerImpl("<code>@Configuration</code>", true),

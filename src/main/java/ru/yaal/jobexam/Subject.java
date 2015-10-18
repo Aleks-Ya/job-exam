@@ -6,7 +6,7 @@ import java.util.List;
  * @author Aleksey Yablokov
  */
 public interface Subject {
-    List<Question> getQuestions();
+    List<? extends Question> getQuestions();
     String getName();
     String getPath();
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div id="1">
+    <div>
+        Какой аннотации не хватает на классе? <br/>
+        <pre><code>
+            public class ServerSettings {
+                @Bean
+                public int port() {
+                    return 8080;
+                }
+            }
+        </code></pre>
+    </div>
+    <div><pre><code>@Settings</code></pre></div>
+    <div><code>@Component</code></div>
+    <div data-right-answer><code>@Configuration</code></div>
+    <div><code>@Beans</code></div>
+    <div><code>@Server</code></div>
+    <div><code>@ServerBean</code></div>
+</div>
+</body>
+</html>

@@ -30,7 +30,7 @@ public class FreemarkerProcessorTest {
                 new QuestionImpl("Сколько ног у сороконожки?", answers));
         Subject subject = new SubjectImpl(questions, "Зоология", "zoo/legs.html");
 
-        FreemarkerProcessor fp = new FreemarkerProcessor();
+        FreemarkerProcessor fp = new FreemarkerProcessorImpl();
         String actual = fp.process(subject);
 
         Path path = Paths.get(FreemarkerProcessorTest.class.getResource("expected_freemarker_processor_output.txt").toURI());

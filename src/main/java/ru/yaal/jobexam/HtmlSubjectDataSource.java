@@ -23,6 +23,7 @@ public class HtmlSubjectDataSource implements SubjectsDateSource {
     }
 
     public Subject takeSubjectByPath(String path) throws IOException {
+        assert path != null;
         File file = new File(baseDir, path);
         if (file.exists()) {
             Document doc = Jsoup.parse(file, "UTF-8");
@@ -40,14 +41,14 @@ public class HtmlSubjectDataSource implements SubjectsDateSource {
     }
 
     private List<Question> parseQuestions(Document doc) {
-        List<Question> questions = new ArrayList<Question>();
+        List<Question> questions = new ArrayList<>();
         Elements questionDivs = doc.body().children();
         for (Element question : questionDivs) {
             if (question.tagName().equals("div")) {
                 Elements divs = question.getElementsByTag("div");
                 //element #0 is parent <div>
                 String questionText = divs.get(1).html();
-                List<Answer> answers = new ArrayList<Answer>();
+                List<Answer> answers = new ArrayList<>();
                 for (int i = 2; i < divs.size(); i++) {
                     Element answerDiv = divs.get(i);
                     boolean isRight = answerDiv.hasAttr("data-right-answer");

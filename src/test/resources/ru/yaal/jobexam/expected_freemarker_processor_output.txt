@@ -23,8 +23,8 @@
     Сколько ног у сороконожки?
     </p>
     <label>Варианты ответов:<br/>
-            <input type="radio" name="spring-1" value="1">ru.yaal.jobexam.AnswerImpl@3c2d329f<br/>
-            <input type="radio" name="spring-1" value="1">ru.yaal.jobexam.AnswerImpl@e4616648<br/>
+            <input type="radio" name="spring-1" value="1">Сорок<br/>
+            <input type="radio" name="spring-1" value="1">У нее лапки<br/>
     </label>
 
     <p><input type="submit" value="Отправить"/></p>

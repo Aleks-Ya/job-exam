@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Опрос по Spring</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        [data-right-answer] {
+            border: solid 2px green;
+        }
+    </style>
 </head>
 <body>
+
 <div id="1">
     <div>
-        Какой аннотации не хватает на классе? <br/>
+        Какой аннотации не хватает на классе?<br/>
         <pre><code>
             public class ServerSettings {
                 @Bean
@@ -26,6 +32,24 @@
     <div><code>@Beans</code></div>
     <div><code>@Server</code></div>
     <div><code>@ServerBean</code></div>
+    <div>Нет правильного ответа</div>
 </div>
+
+<div id="2">
+    <div>
+        Какое имя получит бин?<br/>
+        <pre><code>
+            @Bean
+            public int getPort() {
+                return 8080;
+            }
+        </code></pre>
+    </div>
+    <div data-right-answer><pre><code>getPort</code></pre></div>
+    <div><code>port</code></div>
+    <div><code>getPort$1</code> (вместо 1 может быть произвольное число)</div>
+    <div>Нет правильного ответа</div>
+</div>
+
 </body>
 </html>

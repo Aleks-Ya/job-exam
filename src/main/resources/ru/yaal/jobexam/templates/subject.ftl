@@ -27,7 +27,7 @@
     </p>
     <label>Варианты ответов:<br/>
         <#list question.answers as answer>
-            <input type="radio" name="spring-1" value="1">${answer}<br/>
+            <input type="radio" name="spring-1" value="1">${answer.text}<br/>
         </#list>
     </label>
 
